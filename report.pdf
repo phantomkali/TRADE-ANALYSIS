@@ -1,0 +1,47 @@
+Trader Behavior & Market Sentiment Analysis
+Methodology
+
+This project analyzes how cryptocurrency trader behavior and performance vary across market sentiment regimes using trading activity data and the Fear & Greed Index.
+
+First, historical trading records were cleaned and standardized by converting Unix timestamps into daily dates. The sentiment dataset was aligned with trading activity using daily temporal matching to ensure consistent comparison across datasets.
+
+Behavioral features were then engineered to characterize trader activity, including:
+
+Daily PnL to measure profitability
+
+Win rate to evaluate trade success consistency
+
+Average trade size as a proxy for risk appetite
+
+Trades per day to capture trading intensity
+
+Long/Short ratio to identify directional bias
+
+Drawdown proxy to approximate downside risk exposure
+
+The merged dataset enabled comparative analysis across sentiment categories (Fear, Neutral, Greed, Extreme Greed). Visual analysis using boxplots and statistical summaries was performed to identify behavioral differences. Additionally, a Random Forest classifier was trained to predict next-day profitability using sentiment and behavioral features to test predictive usefulness.
+
+Key Insights
+
+1. Trading behavior changes with market sentiment
+Traders become significantly more active during Fear periods, showing higher trading frequency and larger variability in trade sizes. This suggests reactive or emotionally driven trading during uncertain market conditions.
+
+2. Emotional markets increase risk exposure
+Drawdown analysis shows larger negative outcomes during both Fear and Greed regimes compared to Neutral periods. Strong sentiment appears to amplify risk-taking behavior and performance volatility.
+
+3. Directional conviction rises during sentiment extremes
+Long/Short ratios become more extreme in Fear and Greed markets, indicating stronger directional positioning and reduced hedging behavior. Neutral sentiment corresponds to more balanced positioning.
+
+4. Sentiment contains predictive signal
+The predictive model achieved accuracy above random baseline, indicating that trader behavior combined with sentiment provides useful information about future profitability despite market randomness.
+
+Strategy Recommendations
+
+1. Reduce Risk During Fear Regimes
+Since trading activity and drawdowns increase during Fear periods, traders should lower leverage and reduce position sizes to limit downside exposure.
+
+2. Apply Controlled Momentum Strategies in Greed Markets
+Greed regimes show stronger directional conviction. Selective participation with predefined risk controls may improve performance while preventing overconfidence-driven losses.
+
+3. Favor Consistent Trading Behavior
+Stable traders with balanced activity and moderate position sizing demonstrate more reliable outcomes than highly reactive high-frequency traders during volatile sentiment conditions
